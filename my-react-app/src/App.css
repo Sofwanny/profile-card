@@ -1,3 +1,12 @@
+.root {
+  --bg: #050607;
+  --text: #e6eef6;
+  --muted: #94a3b8;
+  --accent: #0ea5e9;
+  --card: #ffffff;
+  --shadow: 0 10px 30px rgba(2,6,23,0.6);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,173 +14,33 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: Inter, 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial;
+  background: var(--bg);
+  color: var(--text);
   min-height: 100vh;
-  padding: 20px;
+  padding: 40px 20px;
 }
 
 .app-container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .app-title {
-  text-align: center;
-  color: white;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  animation: slideDown 0.6s ease-out;
+  text-align: left;
+  color: var(--text);
+  font-size: 2rem;
+  margin-bottom: 24px;
+  font-weight: 700;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
 }
 
-.profile-card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  border-top: 5px solid;
-  transition: all 0.3s ease;
-  animation: fadeInUp 0.6s ease-out;
-  cursor: pointer;
-}
-
-.profile-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
-}
-
-.card-header {
-  padding: 20px;
-  color: white;
-  text-align: center;
-}
-
-.card-header h2 {
-  font-size: 1.5rem;
-  animation: pulse 2s infinite;
-}
-
-.card-content {
-  padding: 20px;
-}
-
-.role {
-  color: #666;
-  font-size: 0.95rem;
-  margin-bottom: 12px;
-  font-weight: 500;
-}
-
-.status {
-  margin-bottom: 16px;
-}
-
-.status-badge {
-  display: inline-block;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  animation: bounce 1s infinite;
-}
-
-.status-badge.online {
-  background-color: #d4edda;
-  color: #155724;
-}
-
-.status-badge.offline {
-  background-color: #f8d7da;
-  color: #721c24;
-}
-
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.skill-tag {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 6px 12px;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  animation: fadeIn 0.5s ease-out;
-  transition: transform 0.3s ease;
-}
-
-.skill-tag:hover {
-  transform: scale(1.1);
-}
-
-/* Animations */
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.8;
-  }
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-3px);
-  }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .app-title {
-    font-size: 1.8rem;
-  }
+/* small helper to center content on very small screens */
+@media (max-width: 520px) {
+  .app-title { text-align: center; }
 }
